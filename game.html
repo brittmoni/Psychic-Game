@@ -6,17 +6,24 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/style.css">
-  <script type="text/javascript" href="assets/javascript/game.js"></script>
+  <!-- <script type="text/javascript" src="assets/javascript/game.js"></script> -->
   <title>Psychic Game</title>
 </head>
 <body>
   <div>
-    <h1>The Psychic Game</h1>
-    <p>Guess what letter I'm thinking of</p>
-    <p id="wins"></p>
-    <p id="losses"></p>
-    <p id="chances-left"></p>
-    <p id="guesses"></p>
+    <header>
+      <h1>The Psychic Game</h1>
+    </header>
+    <div class="game">
+      <p>Guess what letter I'm thinking of</p>
+      <p>Wins: <span id="wins"></span></p>
+      <p>Losses: <span id="losses"></span></p>
+      <p>Chances Left: <span id="chances-left"></span></p>
+      <p>What you've guessed: <span id="guesses"> </span></p>
+      <p class id="result"></p>
+    </div>
+    
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
   </div>
 </body>
 </html>

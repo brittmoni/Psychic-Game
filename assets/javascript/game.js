@@ -2,19 +2,39 @@ var wins = 0;
 var losses = 0;
 var guessesLeft = 10;
 
-var compChoices = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var compChoices = "abcdefghijklmnopqrstuvwxyz";
 
-var userInput = "";
-var randomGuess = " ";
-for (i=0; i < compChoices.length; i++){
-  randomGuess = compChoices[Math.floor(Math.random() * 26)];
+var userInput = document.getElementById("guesses");
+var randomGuess = "";
 
-  if (userInput === randomGuess) {
-    wins++;
-    document.getElementById("wins").innerText = "Wins: " + wins;
+
+for(var i=0; i < 10; i++){
+  document.onkeyup = function(event) {
+    randomGuess = compChoices[Math.floor(Math.random() * 26)];
+    console.log(randomGuess);
+
+    userInput.innerText += event.key;
+
+    if (randomGuess === userInput) {
+      wins++;
+      document.getElementById("wins").innerText = wins;
+    }
+    else {
+      losses++;
+      document.getElementById("losses").innerText = losses;
+    }
+
+    guessesLeft--;
+    document.getElementById("chances-left").innerText = guessesLeft;
+    //continue;
+
   }
-  else {
-    losses++;
-    document.getElementById("losses").innerText = "Losses: " + losses;
-  }
-};
+}
+
+if(guessesLeft === 0 && losses === 6){
+  document.getElementById("result").innerText = "Sorry you lost. Try again?";
+} else {
+  document.getElementById("result").innerText = "You won! Play again?";
+}
+
+ 

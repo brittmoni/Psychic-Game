@@ -6,5 +6,16 @@ h1 {
 
 p {
   font-size: 20px;
-  margin-left: 10px;
+  margin-left: 15px;
+  margin-bottom: 30px;
+}
+
+header {
+  text-align: center;
+}
+
+.game {
+  border: 2px solid gray;
+  background: cornsilk; 
+  padding: 20px;
 }
