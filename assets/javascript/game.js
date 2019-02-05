@@ -26,15 +26,15 @@ for(var i=0; i < 10; i++){
 
     guessesLeft--;
     document.getElementById("chances-left").innerText = guessesLeft;
-    //continue;
+
+    if(guessesLeft === 0 && losses === 6){
+      document.getElementById("result").innerText = "Sorry you lost. Try again?";
+    } else {
+      document.getElementById("result").innerText = "You won! Play again?";
+    }
+
+    //continue; I tried to use continue to restart the loop
 
   }
 }
-
-if(guessesLeft === 0 && losses === 6){
-  document.getElementById("result").innerText = "Sorry you lost. Try again?";
-} else {
-  document.getElementById("result").innerText = "You won! Play again?";
-}
-
  
